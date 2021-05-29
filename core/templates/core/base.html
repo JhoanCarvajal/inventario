@@ -8,7 +8,7 @@
 </head>
 <body>
     <div>
-        <a href="#">Iniciar sesion</a>
+        <a href="{% url 'login' %}">Iniciar sesion</a>
         <a href="{% url 'signup' %}">registrase</a>
         {% block content %}{% endblock %}
     </div>

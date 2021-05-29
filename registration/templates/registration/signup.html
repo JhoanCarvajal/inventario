@@ -3,9 +3,9 @@
 
 {% block content %}
 <div>
+    <h3>Registrarse</h3>
     <form action="" method="POST">{% csrf_token %}
         {{ form.errors }}
-        <h3>Registrarse</h3>
         {{ form.as_p }}
         <input type="submit" value="Registrame">
     </form>
