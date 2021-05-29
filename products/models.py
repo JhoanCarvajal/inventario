@@ -7,7 +7,7 @@ class Product(models.Model):
     precio = models.IntegerField(verbose_name="Precio")
     informacion = models.TextField(verbose_name="Informacion")
     fecha_adquisicion = models.DateTimeField(verbose_name="Fecha de adquisición")
-    imagen = models.ImageField(verbose_name="Imagen", upload_to="media/products")
+    imagen = models.ImageField(verbose_name="Imagen", upload_to="products")
     id_usuario = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name="usuario", on_delete=models.CASCADE)
 
     class Meta:

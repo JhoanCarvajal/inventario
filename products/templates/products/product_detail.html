@@ -1,0 +1,9 @@
+{% extends 'core/home.html' %}
+{% block title %} Detalles del producto {% endblock %}
+
+{% block content %}
+<div>
+    <h1> {{ object.nombre }} </h1>
+    <p> {{ object.precio }} </p>
+</div>
+{% endblock %}
