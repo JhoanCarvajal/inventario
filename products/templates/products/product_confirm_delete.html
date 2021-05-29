@@ -1,0 +1,12 @@
+
+{% extends 'core/home.html' %}
+{% block title %} Eliminar producto {% endblock %}
+
+{% block content %}
+<div>
+    <form method="post">{% csrf_token %}
+    <p>Esta seguro de eliminar "{{ object }}"?</p>
+    <input type="submit" value="Confirmar">
+</form>
+</div>
+{% endblock %}

@@ -1,12 +1,12 @@
 {% extends 'core/home.html' %}
-{% block title %} Agregar producto {% endblock %}
+{% block title %} Lista de productos {% endblock %}
 
 {% block content %}
 <div>
     <h1>Productos</h1>
     <ul>
     {% for product in object_list %}
-        <li>{{ product.nombre }} - {{ product.precio }} - <a href="{% url 'product_detail' product.id %}">Ver</a> - <a href="#">Actualizar</a> - <a href="#">Eliminar</a></li>
+        <li>{{ product.nombre }} - {{ product.precio }} - <a href="{% url 'product_detail' product.id %}">Ver</a> - <a href="#">Actualizar</a> - <a href="{% url 'product_delete' product.id %}">Eliminar</a></li>
     {% empty %}
         <li>No hay productos registrados.</li>
     {% endfor %}

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import CreateView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import DeleteView
 from django.urls import reverse_lazy
 from .models import Product
 from .forms import ProductForm
@@ -20,3 +21,8 @@ class ProductCreateView(CreateView):
     form_class = ProductForm
     def get_success_url(self):
         return reverse_lazy('product_list')
+
+
+class ProductDeleteView(DeleteView):
+    model = Product
+    success_url = reverse_lazy('product_list')
