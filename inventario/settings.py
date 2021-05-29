@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -122,7 +123,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Auth redirect
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'product_list'
 LOGOUT_REDIRECT_URL = 'login'

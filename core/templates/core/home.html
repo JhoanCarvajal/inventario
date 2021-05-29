@@ -9,8 +9,9 @@
 <body>
     <div>
         <p>“Mini sistema de información: Administración de productos</p>
-        <a href="{% url 'login' %}">Iniciar sesion</a>
-        <a href="{% url 'signup' %}">registrase</a>
+        <p>Mi nombre</p>
+        <a href="{% url 'logout' %}">Cerrar sesion</a>
+        <a href="{% url 'product_create' %}">agregar productos</a>
         {% block content %}{% endblock %}
     </div>
 </body>

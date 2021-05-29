@@ -1,0 +1,15 @@
+{% extends 'core/home.html' %}
+{% block title %} Agregar producto {% endblock %}
+
+{% block content %}
+<div>
+    <h1>Productos</h1>
+    <ul>
+    {% for product in object_list %}
+        <li>{{ product.nombre }} - {{ product.precio }}</li>
+    {% empty %}
+        <li>No hay productos registrados.</li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}
