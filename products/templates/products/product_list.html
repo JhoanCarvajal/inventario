@@ -17,12 +17,17 @@
                 <tr>
                     <th scope="row">{{ product.nombre }}</th>
                     <td>{{ product.precio }}</td>
+                    
+                    <!-- Button trigger modal -->
                     <td>
-                        <!-- Button trigger modal -->
                         <button type="button" onclick="abrir_detail_modal('{% url 'product_detail' product.id %}')" class="btn btn-outline-success btn-sm">Ver</button>
                     </td>
-                    <td><button type="button" onclick="abrir_update_modal('{% url 'product_update' product.id %}')" class="btn btn-outline-success btn-sm">Actualizar</button></td>
-                    <td><button type="button" onclick="abrir_delete_modal('{% url 'product_delete' product.id %}')" class="btn btn-outline-danger btn-sm">Eliminar</a></td>
+                    <td>
+                        <button type="button" onclick="abrir_update_modal('{% url 'product_update' product.id %}')" class="btn btn-outline-success btn-sm">Actualizar</button>
+                    </td>
+                    <td>
+                        <button type="button" onclick="abrir_delete_modal('{% url 'product_delete' product.id %}')" class="btn btn-outline-danger btn-sm">Eliminar</a>
+                    </td>
                 </tr>
             {% empty %}
                 <li>No hay productos registrados.</li>

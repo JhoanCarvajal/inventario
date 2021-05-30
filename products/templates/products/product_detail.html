@@ -5,10 +5,15 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <img src="{{ object.imagen.url }}" class="img-thumbnail" alt="imagen de {{object.nombre}}">
-            <p> {{ object.precio }} </p>
-            <p> {{ object.informacion }} </p>
-            <p> {{ object.fecha_adquisicion|date }} </p>
+            <div class="row justify-content-md-center">
+                <div class="col-4">
+                    <img src="{{ object.imagen.url }}" class="img-fluid rounded mx-auto d-block" alt="imagen de {{object.nombre}}">
+                </div>
+                    <p> {{ object.precio }} </p>
+                    <p> {{ object.informacion }} </p>
+                    <p> {{ object.fecha_adquisicion|date }} </p>
+                
+            </div>
         </div>
         <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

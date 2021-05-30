@@ -8,7 +8,34 @@
             <div class="modal-body">
                 {{ form.errors }}
                 {{ form.media}}
-                {{ form.as_p }}
+
+                <div class="form-floating mb-2">
+                    <input type="text" name="nombre" maxlength="50" class="form-control" placeholder="Nombre" required id="id_nombre">
+                    <label for="id_nombre" class="floatingInput">Nombre</label>
+                </div>
+                
+                <div class="form-floating mb-2">
+                    <input type="number" name="precio" class="form-control" placeholder="Precio" required id="id_precio">
+                    <label for="id_precio" class="floatingInput">Precio</label>
+                </div>
+                
+                <div class="form-floating mb-2">
+                    <textarea name="informacion" style="height: 100px;" maxlength="500" class="form-control" placeholder="Informacion" required id="id_informacion"></textarea>
+                    <label for="id_informacion" class="floatingInput">Informacion</label>
+                </div>
+                
+                <div class="form-floating mb-2">
+                    <input type="date" name="fecha_adquisicion" class="form-control" placeholder="Fecha de adquisición" required id="id_fecha_adquisicion">
+                    <label for="id_fecha_adquisicion" class="floatingInput">Fecha de adquisición</label>
+                </div>
+                
+                <div class="form-floating mb-2">
+                    <input type="file" name="imagen" style="height: 70px; padding-top: 38px;" accept="image/*" class="form-control" placeholder="Imagen" required id="id_imagen">
+                    <label for="id_imagen" class="floatingInput">Imagen</label> 
+                </div>
+                
+                <select name="id_usuario" hidden=""><option value="{{request.user.id}}" selected>{{request.user}}</option></select>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
