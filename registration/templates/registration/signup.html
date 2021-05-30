@@ -1,13 +1,25 @@
 {% extends 'core/base.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
 {% block title %} Registrarse {% endblock %}
 
 {% block content %}
-<div>
-    <h3>Registrarse</h3>
-    <form action="" method="POST">{% csrf_token %}
-        {{ form.errors }}
-        {{ form.as_p }}
-        <input type="submit" value="Registrame">
-    </form>
+<div class="text-center mt-5">
+    <div class="row justify-content-center">
+        <div class="col-4 align-self-center">
+            <form class="form-signin" method='POST' action="">{% csrf_token %}
+                {{ form.errors }}
+                <h1 class="h3 mb-3 font-weight-normal">Registrarse</h1>
+                
+                {% for field in form %}
+                    <div class="form-floating mb-2">
+                        {% render_field field class="form-control" placeholder="{{ field.label }}" %}
+                        <label for="{{ field.name }}" class="floatingInput">{{ field.label }}</label>
+                    </div>
+		        {% endfor %}
+                <button type="submit" value="Registrame" class="btn btn-lg btn-primary btn-block">Registrame</button>
+            </form>
+        </div>
+    </div>
 </div>
 {% endblock %}
