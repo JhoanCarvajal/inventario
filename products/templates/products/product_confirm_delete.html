@@ -1,12 +1,18 @@
-
-{% extends 'core/home.html' %}
-{% block title %} Eliminar producto {% endblock %}
-
-{% block content %}
-<div>
-    <form method="post">{% csrf_token %}
-    <p>Esta seguro de eliminar "{{ object }}"?</p>
-    <input type="submit" value="Confirmar">
-</form>
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="detail_modalLabel">Eliminar producto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="{% url 'product_delete' object.id %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <div class="modal-body">
+                <p>Está seguro que desea eliminar este producto?</p>
+                <p>"{{ object }}"</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Confirmar</button>
+            </div>
+        </form>
+    </div>
 </div>
-{% endblock %}

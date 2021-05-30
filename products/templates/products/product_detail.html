@@ -1,9 +1,17 @@
-{% extends 'core/home.html' %}
-{% block title %} Detalles del producto {% endblock %}
-
-{% block content %}
-<div>
-    <h1> {{ object.nombre }} </h1>
-    <p> {{ object.precio }} </p>
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="detail_modalLabel">Producto {{ object }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <img src="{{ object.imagen.url }}" class="img-thumbnail" alt="imagen de {{object.nombre}}">
+            <p> {{ object.precio }} </p>
+            <p> {{ object.informacion }} </p>
+            <p> {{ object.fecha_adquisicion|date }} </p>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+    </div>
 </div>
-{% endblock %}

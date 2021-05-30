@@ -1,15 +1,65 @@
 {% extends 'core/home.html' %}
 {% block title %} Lista de productos {% endblock %}
 
+{% block titulo %}Productos{% endblock %}
 {% block content %}
 <div>
-    <h1>Productos</h1>
-    <ul>
-    {% for product in object_list %}
-        <li>{{ product.nombre }} - {{ product.precio }} - <a href="{% url 'product_detail' product.id %}">Ver</a> - <a href="{% url 'product_update' product.id %}">Actualizar</a> - <a href="{% url 'product_delete' product.id %}">Eliminar</a></li>
-    {% empty %}
-        <li>No hay productos registrados.</li>
-    {% endfor %}
-    </ul>
+    <table class="table">
+        <thead class="table-secondary">
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Precio</th>
+              <th scope="col" colspan="3">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in object_list %}
+                <tr>
+                    <th scope="row">{{ product.nombre }}</th>
+                    <td>{{ product.precio }}</td>
+                    <td>
+                        <!-- Button trigger modal -->
+                        <button type="button" onclick="abrir_detail_modal('{% url 'product_detail' product.id %}')" class="btn btn-outline-success btn-sm">Ver</button>
+                    </td>
+                    <td><button type="button" onclick="abrir_update_modal('{% url 'product_update' product.id %}')" class="btn btn-outline-success btn-sm">Actualizar</button></td>
+                    <td><button type="button" onclick="abrir_delete_modal('{% url 'product_delete' product.id %}')" class="btn btn-outline-danger btn-sm">Eliminar</a></td>
+                </tr>
+            {% empty %}
+                <li>No hay productos registrados.</li>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="detail_modal" role="dialog">
+        
+    </div>
+    <div class="modal fade" id="update_modal" role="dialog">
+        
+    </div>
+    <div class="modal fade" id="delete_modal" role="dialog">
+        
+    </div>
 </div>
+{% endblock %}
+{% block extrajs %}
+<script type="text/javascript">
+    var $ = jQuery.noConflict();
+    function abrir_update_modal(url){
+        $('#update_modal').load(url, function (){
+            $(this).modal('show');
+        });
+    }
+    function abrir_detail_modal(url){
+        $('#detail_modal').load(url, function (){
+            $(this).modal('show');
+        });
+    }
+    function abrir_delete_modal(url){
+        $('#delete_modal').load(url, function (){
+            $(this).modal('show');
+        });
+    }
+
+</script>
 {% endblock %}
