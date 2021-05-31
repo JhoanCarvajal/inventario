@@ -2,6 +2,9 @@
 {% load staticfiles %}
 {% block title %} Landing Page {% endblock %}
 {% block content %}
+{% if request.user.is_authenticated %}
+<script>window.location.href = '/products/list/'; </script>
+{% endif %}
 <div class="mb-0">
     <img src="{% static 'img/ap.png' %}" class="card-img-top mb-0" alt="imagen del inventario">
     <div class="card-body">
