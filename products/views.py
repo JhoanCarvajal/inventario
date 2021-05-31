@@ -19,11 +19,8 @@ from .forms import ProductForm, ProductUpdateForm
 @method_decorator(login_required, name='dispatch')
 class ProductListView(ListView):
     model = Product
-
-    def get_context_data(self, **kwargs):
-        context = super(ProductListView, self).get_context_data(**kwargs)
-        context["products"] = Product.objects.filter(id_usuario=self.request.user)
-        return context
+    def get_queryset(self):
+        return Product.objects.filter(id_user=self.request.user)
 
 
 # ver cada producto individual

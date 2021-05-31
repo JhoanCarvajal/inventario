@@ -3,7 +3,7 @@
 
 {% block titulo %}Productos{% endblock %}
 {% block content %}
-<div>
+<div class="table-responsive">
     <table class="table">
         <thead class="table-secondary">
             <tr>
@@ -13,10 +13,10 @@
             </tr>
         </thead>
         <tbody>
-            {% for product in products %}
+            {% for product in object_list  %}
                 <tr>
-                    <th scope="row">{{ product.nombre }}</th>
-                    <td>{{ product.precio }}</td>
+                    <th scope="row">{{ product.name }}</th>
+                    <td>{{ product.price }}</td>
                     
                     <!-- Button trigger modal -->
                     <td>

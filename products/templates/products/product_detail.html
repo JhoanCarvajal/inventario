@@ -7,11 +7,11 @@
         <div class="modal-body">
             <div class="row justify-content-md-center">
                 <div class="col-4">
-                    <img src="{{ object.imagen.url }}" class="img-fluid rounded mx-auto d-block" alt="imagen de {{object.nombre}}">
+                    <img src="{{ object.image.url }}" class="img-fluid rounded mx-auto d-block" alt="imagen de {{object.nombre}}">
                 </div>
-                    <p> {{ object.precio }} </p>
-                    <p> {{ object.informacion }} </p>
-                    <p> {{ object.fecha_adquisicion|date }} </p>
+                    <p> {{ object.price }} </p>
+                    <p> {{ object.information }} </p>
+                    <p> {{ object.acquisition_date|date }} </p>
                 
             </div>
         </div>

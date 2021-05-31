@@ -3,17 +3,17 @@ from django.conf import settings
 
 # Create your models here.
 class Product(models.Model):
-    nombre = models.CharField(verbose_name="Nombre", max_length=50)
-    precio = models.IntegerField(verbose_name="Precio")
-    informacion = models.TextField(verbose_name="Informacion", max_length=500)
-    fecha_adquisicion = models.DateTimeField(verbose_name="Fecha de adquisición")
-    imagen = models.ImageField(verbose_name="Imagen", upload_to="products")
-    id_usuario = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name="usuario", on_delete=models.CASCADE)
+    name = models.CharField(verbose_name="Nombre", max_length=50)
+    price = models.IntegerField(verbose_name="Precio")
+    information = models.TextField(verbose_name="Información", max_length=500)
+    acquisition_date = models.DateTimeField(verbose_name="Fecha de adquisición")
+    image = models.ImageField(verbose_name="Imagen", upload_to="products")
+    id_user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name="Usuario", on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = "Producto"
         verbose_name_plural = "Productos"
-        ordering = ['nombre']
+        ordering = ['acquisition_date']
 
     def __str__(self):
-        return self.nombre
+        return self.name

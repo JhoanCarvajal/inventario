@@ -8,27 +8,27 @@ class ProductForm(forms.ModelForm):
 
     class Meta:
         model = Product
-        fields = ['nombre', 'precio', 'informacion', 'fecha_adquisicion', 'imagen', 'id_usuario']
+        fields = ['name', 'price', 'information', 'acquisition_date', 'image', 'id_user']
 
 
 # form para actualizar un producto
 class ProductUpdateForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['nombre', 'imagen', 'precio', 'informacion', 'fecha_adquisicion']
+        fields = ['name', 'image', 'price', 'information', 'acquisition_date']
 
         widgets = {
-            'nombre':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Nombre'}),
-            # 'imagen':forms.FileInput(attrs={'class':'form-control', 'style':'height: 70px; padding-top: 38px;', 'placeholder':'Imagen'}),
-            'precio':forms.NumberInput(attrs={'class':'form-control', 'min':'1000', 'placeholder':'Precio'}),
-            'informacion':forms.Textarea(attrs={'class':'form-control', 'style':'height: 100px;', 'placeholder':'Informacion'}),
-            'fecha_adquisicion':forms.DateInput(format ='%Y-%m-%d', attrs={'type':'date','class':'form-control', 'placeholder':'Fecha de adquisicion'}),
+            'name':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Nombre'}),
+            # 'image':forms.FileInput(attrs={'class':'form-control', 'style':'height: 70px; padding-top: 38px;', 'placeholder':'Imagen'}),
+            'price':forms.NumberInput(attrs={'class':'form-control', 'min':'1000', 'placeholder':'Precio'}),
+            'information':forms.Textarea(attrs={'class':'form-control', 'style':'height: 100px;', 'placeholder':'Informacion'}),
+            'acquisition_date':forms.DateInput(format ='%Y-%m-%d', attrs={'type':'date','class':'form-control', 'placeholder':'Fecha de adquisicion'}),
         }
         labels = {
-            'nombre':'Nombre',
-            'imagen':'Imagen',
-            'precio':'Precio',
-            'informacion':'Informacion',
-            'fecha_adquisicion':'Fecha de adquisicion',
+            'name':'Nombre',
+            'image':'Imagen',
+            'price':'Precio',
+            'information':'Información',
+            'acquisition_date':'Fecha de adquisición',
         }
 

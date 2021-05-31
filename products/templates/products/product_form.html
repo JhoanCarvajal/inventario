@@ -17,31 +17,31 @@
                 {% endif %}
 
                 <div class="form-floating mb-2">
-                    <input type="text" name="nombre" maxlength="50" class="form-control" placeholder="Nombre" required id="id_nombre">
-                    <label for="id_nombre" class="floatingInput">Nombre</label>
+                    <input type="text" name="name" maxlength="50" class="form-control" placeholder="Nombre" required id="id_name">
+                    <label for="id_name" class="floatingInput">Nombre</label>
                 </div>
                 
                 <div class="form-floating mb-2">
-                    <input type="number" name="precio" class="form-control" min="1000" placeholder="Precio" required id="id_precio">
-                    <label for="id_precio" class="floatingInput">Precio</label>
+                    <input type="number" name="price" class="form-control" min="1000" placeholder="Precio" required id="id_price">
+                    <label for="id_price" class="floatingInput">Precio</label>
                 </div>
                 
                 <div class="form-floating mb-2">
-                    <textarea name="informacion" style="height: 100px;" maxlength="500" class="form-control" placeholder="Informacion" required id="id_informacion"></textarea>
-                    <label for="id_informacion" class="floatingInput">Informacion</label>
+                    <textarea name="information" style="height: 100px;" maxlength="500" class="form-control" placeholder="Información" required id="id_information"></textarea>
+                    <label for="id_information" class="floatingInput">Información</label>
                 </div>
                 
                 <div class="form-floating mb-2">
-                    <input type="date" name="fecha_adquisicion" class="form-control" placeholder="Fecha de adquisición" required id="id_fecha_adquisicion">
-                    <label for="id_fecha_adquisicion" class="floatingInput">Fecha de adquisición</label>
+                    <input type="date" name="acquisition_date" class="form-control" placeholder="Fecha de adquisición" required id="id_acquisition_date">
+                    <label for="id_acquisition_date" class="floatingInput">Fecha de adquisición</label>
                 </div>
                 
                 <div class="form-floating mb-2">
-                    <input type="file" name="imagen" style="height: 70px; padding-top: 38px;" accept="image/png,image/jpeg" class="form-control" placeholder="Imagen" required id="id_imagen">
-                    <label for="id_imagen" class="floatingInput">Imagen</label> 
+                    <input type="file" name="image" style="height: 70px; padding-top: 38px;" accept="image/png,image/jpeg" class="form-control" placeholder="Imagen" required id="id_image">
+                    <label for="id_image" class="floatingInput">Imagen</label> 
                 </div>
                 
-                <select name="id_usuario" hidden=""><option value="{{request.user.id}}" selected>{{request.user}}</option></select>
+                <select name="id_user" hidden=""><option value="{{request.user.id}}" selected>{{request.user}}</option></select>
 
             </div>
             <div class="modal-footer">
