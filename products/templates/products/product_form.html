@@ -6,8 +6,15 @@
         </div>
         <form action="{% url 'product_create' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
             <div class="modal-body">
-                {{ form.errors }}
-                {{ form.media}}
+                {% if form.errors %}
+                    {% for field in form %}
+                        {% for error in field.errors %} 
+                        <div class="alert alert-danger">
+                                <strong>{{ error|escape }}</strong>
+                        </div>
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
 
                 <div class="form-floating mb-2">
                     <input type="text" name="nombre" maxlength="50" class="form-control" placeholder="Nombre" required id="id_nombre">
@@ -15,7 +22,7 @@
                 </div>
                 
                 <div class="form-floating mb-2">
-                    <input type="number" name="precio" class="form-control" placeholder="Precio" required id="id_precio">
+                    <input type="number" name="precio" class="form-control" min="1000" placeholder="Precio" required id="id_precio">
                     <label for="id_precio" class="floatingInput">Precio</label>
                 </div>
                 
@@ -30,7 +37,7 @@
                 </div>
                 
                 <div class="form-floating mb-2">
-                    <input type="file" name="imagen" style="height: 70px; padding-top: 38px;" accept="image/*" class="form-control" placeholder="Imagen" required id="id_imagen">
+                    <input type="file" name="imagen" style="height: 70px; padding-top: 38px;" accept="image/png,image/jpeg" class="form-control" placeholder="Imagen" required id="id_imagen">
                     <label for="id_imagen" class="floatingInput">Imagen</label> 
                 </div>
                 

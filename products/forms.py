@@ -18,7 +18,7 @@ class ProductUpdateForm(forms.ModelForm):
         widgets = {
             'nombre':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Nombre'}),
             # 'imagen':forms.FileInput(attrs={'class':'form-control', 'style':'height: 70px; padding-top: 38px;', 'placeholder':'Imagen'}),
-            'precio':forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Precio'}),
+            'precio':forms.NumberInput(attrs={'class':'form-control', 'min':'1000', 'placeholder':'Precio'}),
             'informacion':forms.Textarea(attrs={'class':'form-control', 'style':'height: 100px;', 'placeholder':'Informacion'}),
             'fecha_adquisicion':forms.DateInput(format ='%Y-%m-%d', attrs={'type':'date','class':'form-control', 'placeholder':'Fecha de adquisicion'}),
         }

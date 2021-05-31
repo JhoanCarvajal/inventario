@@ -7,7 +7,15 @@
         </div>
         <form action="{% url 'product_update' object.id %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
             <div class="modal-body">
-                {{ form.errors }}
+                {% if form.errors %}
+                    {% for field in form %}
+                        {% for error in field.errors %} 
+                        <div class="alert alert-danger">
+                                <strong>{{ error|escape }}</strong>
+                        </div>
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
                 {{ form.media}}
                 {{ form.as_p }}
             </div>
