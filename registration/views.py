@@ -6,6 +6,8 @@ from django.urls import reverse_lazy
 
 # Create your views here.
 
+
+# registrar un usuario
 class UserCreateView(CreateView):
     model = User
     template_name = "registration/signup.html"

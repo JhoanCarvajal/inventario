@@ -7,9 +7,12 @@ from django.http.response import HttpResponse
 from products.models import Product
 
 # Create your views here.
+# landing page
 class LandingPageView(TemplateView):
     template_name = "core/landing_page.html"
 
+
+# generar excel con datos
 class ReporteExcel(TemplateView):
     def get(self,request,*args,**kwargs):
         products = Product.objects.filter(id_usuario=self.request.user)

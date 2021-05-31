@@ -15,6 +15,7 @@ from .forms import ProductForm, ProductUpdateForm
 
 # Create your views here.
 
+# listar los productos
 @method_decorator(login_required, name='dispatch')
 class ProductListView(ListView):
     model = Product
@@ -25,11 +26,13 @@ class ProductListView(ListView):
         return context
 
 
+# ver cada producto individual
 @method_decorator(login_required, name='dispatch')
 class ProductDetailView(DetailView):
     model = Product
 
 
+# crear un producto nuevo
 @method_decorator(login_required, name='dispatch')
 class ProductCreateView(CreateView):
     model = Product
@@ -39,6 +42,7 @@ class ProductCreateView(CreateView):
         return reverse_lazy('product_list')
 
 
+# actualizar un producto
 @method_decorator(login_required, name='dispatch')
 class ProductUpdateView(UpdateView):
     model = Product
@@ -49,6 +53,7 @@ class ProductUpdateView(UpdateView):
         return reverse_lazy('product_list')
 
 
+# eliminar un producto
 @method_decorator(login_required, name='dispatch')
 class ProductDeleteView(DeleteView):
     model = Product

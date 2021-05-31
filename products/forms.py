@@ -3,6 +3,7 @@ from django.forms import widgets
 from .models import Product
 
 
+# form para registrar un producto
 class ProductForm(forms.ModelForm):
 
     class Meta:
@@ -10,6 +11,7 @@ class ProductForm(forms.ModelForm):
         fields = ['nombre', 'precio', 'informacion', 'fecha_adquisicion', 'imagen', 'id_usuario']
 
 
+# form para actualizar un producto
 class ProductUpdateForm(forms.ModelForm):
     class Meta:
         model = Product
